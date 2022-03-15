@@ -1,38 +1,38 @@
-// { Driver Code Starts
-#include <iostream>
+#include<iostream>
 using namespace std;
-#define ll long long
 
-pair<long long, long long> getMinMax(long long a[], int n) ;
+
+string reverseWord(string str);
+
 
 int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        ll a[n];
-        for (int i = 0; i < n; i++) cin >> a[i];
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	string s;
+	cin >> s;
+	
+	cout << reverseWord(s) << endl;
+	}
+	return 0;
+	
+}
 
-        pair<ll, ll> pp = getMinMax(a, n);
-
-        cout << pp.first << " " << pp.second << endl;
-    }
-    return 0;
-}// } Driver Code Ends
+// } Driver Code Ends
 
 
-pair<long long, long long> getMinMax(long long a[], int n) 
-{
+//User function Template for C++
+
+string reverseWord(string str){
     
-    ll min = a[0], max = a[0];
-    for(int i=0; i<n; i++)
-    {
-        if(a[i]>max)
-            max = a[i];
-        if(a[i]<min)
-            min = a[i];
-    }
-    return {min,max};
-
+  //Your code here
+  string rsrs = str;
+  int strlength = str.length();
+  for(int i; i<str.length();i++)
+  {
+      rsrs[--strlength] = str[i];
+  }
+  return rsrs;
 }
